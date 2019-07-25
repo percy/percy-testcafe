@@ -11,10 +11,16 @@
   ],
   "author": "Perceptual Inc.",
   "license": "MIT",
+  "scripts": {
+    "test": "percy exec -- testcafe chrome tests/"
+  },
   "dependencies": {
     "@percy/agent": "~0"
   },
   "peerDependencies": {
-    "testcafe": "~0"
+    "testcafe": "~1"
+  },
+  "devDependencies": {
+    "testcafe": "^1.3.3"
   }
 }

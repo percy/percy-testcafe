@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Run tests
+          command: yarn test
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - test
