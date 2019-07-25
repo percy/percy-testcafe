@@ -5,6 +5,9 @@ const {
   agentJsFilename
 } = require("@percy/agent/dist/utils/sdk-utils");
 
+const sdkPkg = require("./package.json");
+const testCafePkg = require("testcafe/package.json");
+
 async function percySnapshot(test, snapshotName, snapshotOptions) {
   let getURL = ClientFunction(() => window.location.href).with({
     boundTestRun: test
@@ -64,13 +67,11 @@ async function postDomSnapshot(name, domSnapshot, url, options) {
 }
 
 function clientInfo() {
-  // TODO pass a version of the SDK
-  return "@percy/testcafe";
+  return `@percy/testcafe-${sdkPkg.version}`;
 }
 
 function environmentInfo() {
-  // TODO pass a version of testcafe
-  return "testcafe";
+  return `testcafe-${testCafePkg.version}`;
 }
 
 module.exports = percySnapshot;
