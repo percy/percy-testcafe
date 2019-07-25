@@ -13,6 +13,6 @@ jobs:
           command: yarn test
 workflows:
   version: 2.1
-  build_and_test:
+  test:
     jobs:
       - test
