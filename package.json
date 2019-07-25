@@ -1,0 +1,20 @@
+{
+  "name": "@percy/testcafe",
+  "version": "0.1.0",
+  "description": "TestCafe client library for visual regression testing with Percy",
+  "main": "index.js",
+  "repository": "https://github.com/percy/percy-testcafe",
+  "keywords": [
+    "testcafe",
+    "percy",
+    "visual testing"
+  ],
+  "author": "Perceptual Inc.",
+  "license": "MIT",
+  "dependencies": {
+    "@percy/agent": "~0"
+  },
+  "peerDependencies": {
+    "testcafe": "~0"
+  }
+}
