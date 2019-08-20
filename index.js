@@ -68,7 +68,7 @@ async function postDomSnapshot(name, domSnapshot, url, options) {
   });
 
   if (!postSuccess) {
-    console.log(`[percy] Error posting snapshot to agent`);
+    console.log(`[percy] Error posting snapshot to agent, disabling Percy`);
     isPercyRunning = false;
   }
 }
