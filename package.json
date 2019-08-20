@@ -1,6 +1,6 @@
 {
   "name": "@percy/testcafe",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TestCafe client library for visual regression testing with Percy",
   "main": "index.js",
   "repository": "https://github.com/percy/percy-testcafe",
