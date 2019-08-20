@@ -8,7 +8,13 @@ const {
 const sdkPkg = require("./package.json");
 const testCafePkg = require("testcafe/package.json");
 
+let isPercyRunning = true;
+
 async function percySnapshot(test, snapshotName, snapshotOptions) {
+  if (!isPercyRunning) {
+    return;
+  }
+
   let getURL = ClientFunction(() => window.location.href).with({
     boundTestRun: test
   });
@@ -63,6 +69,7 @@ async function postDomSnapshot(name, domSnapshot, url, options) {
 
   if (!postSuccess) {
     console.log(`[percy] Error posting snapshot to agent`);
+    isPercyRunning = false;
   }
 }
 
