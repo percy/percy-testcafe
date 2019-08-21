@@ -22,9 +22,20 @@ jobs:
       - run:
           name: Run tests (without Percy)
           command: PERCY_ENABLE=0 yarn test
+  release:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: yarn
+      - run: npx semantic-release
 workflows:
   version: 2.1
-  test:
+  test_and_release:
     jobs:
       - node_8_with_percy
       - node_10
+      - release:
+          requires:
+            - node_10
+            - node_8_with_percy
