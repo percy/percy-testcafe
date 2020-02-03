@@ -1,17 +1,6 @@
 version: 2.1
 jobs:
-  node_8_with_percy:
-    docker:
-      - image: circleci/node:8-browsers
-    steps:
-      - checkout
-      - run:
-          name: Install dependencies
-          command: yarn
-      - run:
-          name: Run tests with Percy
-          command: yarn test
-  node_10:
+  test:
     docker:
       - image: circleci/node:10-browsers
     steps:
@@ -22,9 +11,20 @@ jobs:
       - run:
           name: Run tests (without Percy)
           command: PERCY_ENABLE=0 yarn test
+  percy_test:
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Run tests with Percy
+          command: yarn test
   release:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - run: yarn
@@ -33,9 +33,9 @@ workflows:
   version: 2.1
   test_and_release:
     jobs:
-      - node_8_with_percy
-      - node_10
+      - test
+      - percy_test
       - release:
           requires:
-            - node_10
-            - node_8_with_percy
+            - test
+            - percy_test
