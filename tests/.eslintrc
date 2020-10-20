@@ -1,0 +1,3 @@
+globals:
+  fixture: readonly
+  test: readonly
