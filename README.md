@@ -10,13 +10,13 @@
 Using yarn:
 
 ```sh-session
-$ yarn add --dev @percy/cli @percy/testcafe
+$ yarn add --dev @percy/cli @percy/testcafe@next
 ```
 
 Using npm:
 
 ```sh-session
-$ npm install --save-dev @percy/cli @percy/testcafe
+$ npm install --save-dev @percy/cli @percy/testcafe@next
 ```
 
 ## Usage
