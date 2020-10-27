@@ -19,21 +19,19 @@ module.exports = async function percySnapshot(name, options) {
 
     // Serialize and capture the DOM
     /* istanbul ignore next: no instrumenting injected code */
-    let domSnapshot = await t.eval(() => {
+    let { domSnapshot, url } = await t.eval(() => ({
       /* eslint-disable-next-line no-undef */
-      return PercyDOM.serialize(options);
-    }, { dependencies: { options } });
-
-    /* istanbul ignore next: no instrumenting injected code */
-    let documentURL = await t.eval(() => document.URL);
+      domSnapshot: PercyDOM.serialize(options),
+      url: document.URL
+    }), { dependencies: { options } });
 
     // Post the DOM to the snapshot endpoint with snapshot options and other info
     await utils.postSnapshot({
       ...options,
       environmentInfo: ENV_INFO,
       clientInfo: CLIENT_INFO,
-      url: documentURL,
       domSnapshot,
+      url,
       name
     });
   } catch (error) {
