@@ -303,9 +303,9 @@
     winston "^3.3.3"
 
 "@percy/sdk-utils@^1.0.0-beta.20":
-  version "1.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@percy/sdk-utils/-/sdk-utils-1.0.0-beta.20.tgz#3c4f33e56bb9b8cad9fb1bb5dca4e51ee85d1b50"
-  integrity sha512-Sgsb3P61Ces8NxUASJkeWKTbJpnuvpzW17wB4iPWSlesNhXVxixs5KG2STL3zV4leDLIG0IpEHVlfv0HNKqj1g==
+  version "1.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/@percy/sdk-utils/-/sdk-utils-1.0.0-beta.21.tgz#4679fa659fc7fb3f9b58e3c933e1c2786fe95fc2"
+  integrity sha512-DJHgQgfkdZ4kWa76ZLmto9hJhH6l6wiC1BsUdixCV6S84pl0cuORWGkhq38X7pOtiYcSQjxALkjsoRnhYJGo5Q==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
