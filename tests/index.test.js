@@ -18,26 +18,22 @@ test('throws an error when a name is not provided', async () => {
 test('disables snapshots when the healthcheck fails', async () => {
   sdk.test.failure('/percy/healthcheck');
 
-  await sdk.stdio(async () => {
-    await percySnapshot('Snapshot 1');
-    await percySnapshot('Snapshot 2');
-  });
+  await percySnapshot('Snapshot 1');
+  await percySnapshot('Snapshot 2');
 
   expect(sdk.server.requests).toEqual([
     ['/percy/healthcheck']
   ]);
 
-  expect(sdk.stdio[2]).toHaveLength(0);
-  expect(sdk.stdio[1]).toEqual([
+  expect(sdk.logger.stderr).toEqual([]);
+  expect(sdk.logger.stdout).toEqual([
     '[percy] Percy is not running, disabling snapshots\n'
   ]);
 });
 
 test('posts snapshots to the local percy server', async () => {
-  await sdk.stdio(async () => {
-    await percySnapshot('Snapshot 1');
-    await percySnapshot('Snapshot 2');
-  });
+  await percySnapshot('Snapshot 1');
+  await percySnapshot('Snapshot 2');
 
   expect(sdk.server.requests).toEqual([
     ['/percy/healthcheck'],
@@ -54,18 +50,17 @@ test('posts snapshots to the local percy server', async () => {
     })]
   ]);
 
-  expect(sdk.stdio[2]).toEqual([]);
+  expect(sdk.logger.stdout).toEqual([]);
+  expect(sdk.logger.stderr).toEqual([]);
 });
 
 test('handles snapshot errors', async () => {
   sdk.test.failure('/percy/snapshot', 'failure');
 
-  await sdk.stdio(async () => {
-    await percySnapshot('Snapshot 1');
-  });
+  await percySnapshot('Snapshot 1');
 
-  expect(sdk.stdio[1]).toHaveLength(0);
-  expect(sdk.stdio[2]).toEqual([
+  expect(sdk.logger.stdout).toEqual([]);
+  expect(sdk.logger.stderr).toEqual([
     '[percy] Could not take DOM snapshot "Snapshot 1"\n',
     '[percy] Error: failure\n'
   ]);
