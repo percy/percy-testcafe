@@ -1,5 +1,5 @@
 const utils = require('@percy/sdk-utils');
-const { t } = require('testcafe');
+const { t: implicit } = require('testcafe');
 
 // Collect client and environment information
 const sdkPkg = require('./package.json');
@@ -8,7 +8,9 @@ const CLIENT_INFO = `${sdkPkg.name}/${sdkPkg.version}`;
 const ENV_INFO = `${testCafePkg.name}/${testCafePkg.version}`;
 
 // Take a DOM snapshot and post it to the snapshot endpoint
-module.exports = async function percySnapshot(name, options) {
+module.exports = async function percySnapshot(t, name, options) {
+  // if name is the first arg, assume an implicit controller
+  if (!t || typeof t === 'string') [t, name, options] = [implicit, t, name];
   if (!name) throw new Error('The `name` argument is required.');
   if (!(await utils.isPercyEnabled())) return;
   let log = utils.logger('testcafe');
