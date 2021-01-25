@@ -23,13 +23,13 @@
     "test:types": "tsd"
   },
   "dependencies": {
-    "@percy/sdk-utils": "^1.0.0-beta.20"
+    "@percy/sdk-utils": "^1.0.0-beta.30"
   },
   "peerDependencies": {
     "testcafe": "~1"
   },
   "devDependencies": {
-    "@percy/core": "^1.0.0-beta.20",
+    "@percy/core": "^1.0.0-beta.30",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-standard": "^16.0.1",

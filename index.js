@@ -11,6 +11,7 @@ const ENV_INFO = `${testCafePkg.name}/${testCafePkg.version}`;
 module.exports = async function percySnapshot(name, options) {
   if (!name) throw new Error('The `name` argument is required.');
   if (!(await utils.isPercyEnabled())) return;
+  let log = utils.logger('testcafe');
 
   try {
     // Inject the DOM serialization script
@@ -36,7 +37,7 @@ module.exports = async function percySnapshot(name, options) {
     });
   } catch (error) {
     // Handle errors
-    utils.log('error', `Could not take DOM snapshot "${name}"`);
-    utils.log('error', error);
+    log.error(`Could not take DOM snapshot "${name}"`);
+    log.error(error);
   }
 };
