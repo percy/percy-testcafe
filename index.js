@@ -8,7 +8,7 @@ const ENV_INFO = `${testCafePkg.name}/${testCafePkg.version}`;
 
 // Take a DOM snapshot and post it to the snapshot endpoint
 module.exports = async function percySnapshot(t, name, options) {
-  if (!t) throw new Error('The `test` argument is required.');
+  if (!t) throw new Error("The test function's `t` argument is required.");
   if (!name) throw new Error('The `name` argument is required.');
   if (!(await utils.isPercyEnabled())) return;
   let log = utils.logger('testcafe');

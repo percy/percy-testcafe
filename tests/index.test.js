@@ -12,7 +12,7 @@ fixture('percySnapshot')
 
 test('throws an error when a test is not provided', async () => {
   await expect(percySnapshot())
-    .rejects.toThrow('The `test` argument is required.');
+    .rejects.toThrow("The test function's `t` argument is required.");
 });
 
 test('throws an error when a name is not provided', async t => {
