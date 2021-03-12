@@ -1,5 +1,4 @@
 const utils = require('@percy/sdk-utils');
-const { ClientFunction } = require('testcafe');
 
 // Collect client and environment information
 const sdkPkg = require('./package.json');
@@ -17,15 +16,15 @@ module.exports = async function percySnapshot(t, name, options) {
   try {
     // Inject the DOM serialization script
     /* eslint-disable-next-line no-new-func */
-    await ClientFunction(new Function(await utils.fetchPercyDOM()), { boundTestRun: t })();
+    await t.eval(new Function(await utils.fetchPercyDOM()), { boundTestRun: t });
 
     // Serialize and capture the DOM
     /* istanbul ignore next: no instrumenting injected code */
-    let { domSnapshot, url } = await ClientFunction(() => ({
+    let { domSnapshot, url } = await t.eval(() => ({
       /* eslint-disable-next-line no-undef */
       domSnapshot: PercyDOM.serialize(options),
       url: document.URL
-    }), { boundTestRun: t, dependencies: { options } })();
+    }), { boundTestRun: t, dependencies: { options } });
 
     // Post the DOM to the snapshot endpoint with snapshot options and other info
     await utils.postSnapshot({
