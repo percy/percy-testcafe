@@ -31,7 +31,7 @@ fixture('MyFixture')
 
 test('Test1', async t => {
   await t.typeText('#developer-name', 'John Doe');
-  await percySnapshot('TestCafe Example');
+  await percySnapshot(t, 'TestCafe Example');
 });
 ```
 
@@ -68,10 +68,9 @@ $ percy exec -- testcafe chrome:headless tests
 
 ## Configuration
 
-`percySnapshot(name[, options])`
 `percySnapshot(t, name[, options])`
 
-- `t` - The test controller can be provided when it cannot be implicitly resolved
+- `t`(**required**) - The test controller instance passed from `test`
 - `name` (**required**) - The snapshot name; must be unique to each snapshot
 - `options` - Additional snapshot options (overrides any project options)
   - `options.widths` - An array of widths to take screenshots at
@@ -81,21 +80,6 @@ $ percy exec -- testcafe chrome:headless tests
   - `options.enableJavaScript` - Enable JavaScript in Percy's rendering environment
 
 ## Upgrading
-
-In previous versions of `@percy/testcafe`, the test controller (`t`) was a required argument for the
-`percySnapshot` function. An [implicit test
-controller](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/#implicit-test-controller-use)
-can now be used, however an explicit controller can still be provided when it cannot be implicitly
-resolved.
-
-```javascript
-// before
-await percySnapshot(t, 'Snapshot Name', options);
-
-// after (both options are valid)
-await percySnapshot('Snapshot Name', options);
-await percySnapshot(t, 'Snapshot Name', options);
-```
 
 ### Migrating Config
 

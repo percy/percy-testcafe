@@ -1,5 +1,4 @@
 const utils = require('@percy/sdk-utils');
-const { t: implicit } = require('testcafe');
 
 // Collect client and environment information
 const sdkPkg = require('./package.json');
@@ -9,8 +8,7 @@ const ENV_INFO = `${testCafePkg.name}/${testCafePkg.version}`;
 
 // Take a DOM snapshot and post it to the snapshot endpoint
 module.exports = async function percySnapshot(t, name, options) {
-  // if name is the first arg, assume an implicit controller
-  if (!t || typeof t === 'string') [t, name, options] = [implicit, t, name];
+  if (!t) throw new Error("The test function's `t` argument is required.");
   if (!name) throw new Error('The `name` argument is required.');
   if (!(await utils.isPercyEnabled())) return;
   let log = utils.logger('testcafe');
@@ -18,7 +16,7 @@ module.exports = async function percySnapshot(t, name, options) {
   try {
     // Inject the DOM serialization script
     /* eslint-disable-next-line no-new-func */
-    await t.eval(new Function(await utils.fetchPercyDOM()));
+    await t.eval(new Function(await utils.fetchPercyDOM()), { boundTestRun: t });
 
     // Serialize and capture the DOM
     /* istanbul ignore next: no instrumenting injected code */
@@ -26,7 +24,7 @@ module.exports = async function percySnapshot(t, name, options) {
       /* eslint-disable-next-line no-undef */
       domSnapshot: PercyDOM.serialize(options),
       url: document.URL
-    }), { dependencies: { options } });
+    }), { boundTestRun: t, dependencies: { options } });
 
     // Post the DOM to the snapshot endpoint with snapshot options and other info
     await utils.postSnapshot({
