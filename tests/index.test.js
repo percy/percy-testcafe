@@ -10,16 +10,21 @@ fixture('percySnapshot')
   .afterEach(() => sdk.teardown())
   .after(() => sdk.testsite.close());
 
-test('throws an error when a name is not provided', async () => {
+test('throws an error when a test is not provided', async () => {
   await expect(percySnapshot())
+    .rejects.toThrow('The `test` argument is required.');
+});
+
+test('throws an error when a name is not provided', async t => {
+  await expect(percySnapshot(t))
     .rejects.toThrow('The `name` argument is required.');
 });
 
-test('disables snapshots when the healthcheck fails', async () => {
+test('disables snapshots when the healthcheck fails', async t => {
   sdk.test.failure('/percy/healthcheck');
 
-  await percySnapshot('Snapshot 1');
-  await percySnapshot('Snapshot 2');
+  await percySnapshot(t, 'Snapshot 1');
+  await percySnapshot(t, 'Snapshot 2');
 
   expect(sdk.server.requests).toEqual([
     ['/percy/healthcheck']
@@ -31,9 +36,9 @@ test('disables snapshots when the healthcheck fails', async () => {
   ]);
 });
 
-test('posts snapshots to the local percy server', async () => {
-  await percySnapshot('Snapshot 1');
-  await percySnapshot('Snapshot 2');
+test('posts snapshots to the local percy server', async t => {
+  await percySnapshot(t, 'Snapshot 1');
+  await percySnapshot(t, 'Snapshot 2');
 
   expect(sdk.server.requests).toEqual([
     ['/percy/healthcheck'],
@@ -54,29 +59,10 @@ test('posts snapshots to the local percy server', async () => {
   expect(sdk.logger.stderr).toEqual([]);
 });
 
-test('can work with an explicit test controller', async t => {
-  await percySnapshot(t, 'Snapshot 1');
-
-  expect(sdk.server.requests).toEqual([
-    ['/percy/healthcheck'],
-    ['/percy/dom.js'],
-    ['/percy/snapshot', {
-      name: 'Snapshot 1',
-      url: 'http://localhost:8000/',
-      domSnapshot: '<html><head></head><body>Snapshot Me</body></html>',
-      clientInfo: expect.stringMatching(/@percy\/testcafe\/.+/),
-      environmentInfo: expect.stringMatching(/testcafe\/.+/)
-    }]
-  ]);
-
-  expect(sdk.logger.stdout).toEqual([]);
-  expect(sdk.logger.stderr).toEqual([]);
-});
-
-test('handles snapshot errors', async () => {
+test('handles snapshot errors', async t => {
   sdk.test.failure('/percy/snapshot', 'failure');
 
-  await percySnapshot('Snapshot 1');
+  await percySnapshot(t, 'Snapshot 1');
 
   expect(sdk.logger.stdout).toEqual([]);
   expect(sdk.logger.stderr).toEqual([
