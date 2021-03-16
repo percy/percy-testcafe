@@ -7,16 +7,8 @@
 
 ## Installation
 
-Using yarn:
-
 ```sh-session
-$ yarn add --dev @percy/cli @percy/testcafe@next
-```
-
-Using npm:
-
-```sh-session
-$ npm install --save-dev @percy/cli @percy/testcafe@next
+$ npm install --save-dev @percy/cli @percy/testcafe
 ```
 
 ## Usage
@@ -81,7 +73,33 @@ $ percy exec -- testcafe chrome:headless tests
 
 ## Upgrading
 
-### Migrating Config
+### Automatically with `@percy/migrate`
+
+We built a tool to help automate migrating to the new CLI toolchain! Migrating
+can be done by running the following commands and following the prompts:
+
+``` shell
+$ npx @percy/migrate
+? Are you currently using @percy/testcafe? Yes
+? Install @percy/cli (required to run percy)? Yes
+? Migrate Percy config file? Yes
+? Upgrade SDK to @percy/testcafe@2.0.0? Yes
+```
+
+This will automatically run the changes described below for you.
+
+### Manually
+
+#### Installing `@percy/cli`
+
+If you're coming from a pre-2.0 version of this package, make sure to install `@percy/cli` after
+upgrading to retain any existing scripts that reference the Percy CLI command.
+
+```sh-session
+$ npm install --save-dev @percy/cli
+```
+
+#### Migrating Config
 
 If you have a previous Percy configuration file, migrate it to the newest version with the
 [`config:migrate`](https://github.com/percy/cli/tree/master/packages/cli-config#percy-configmigrate-filepath-output) command:
