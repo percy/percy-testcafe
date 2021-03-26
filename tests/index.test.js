@@ -1,14 +1,14 @@
 import expect from 'expect';
-import sdk from '@percy/sdk-utils/test/helper';
+import helpers from '@percy/sdk-utils/test/helpers';
 import percySnapshot from '..';
 
-sdk.testsite.mock();
+helpers.mockSite();
 
 fixture('percySnapshot')
   .page('http://localhost:8000')
-  .beforeEach(() => sdk.setup())
-  .afterEach(() => sdk.teardown())
-  .after(() => sdk.testsite.close());
+  .beforeEach(() => helpers.setup())
+  .afterEach(() => helpers.teardown())
+  .after(() => helpers.closeSite());
 
 test('throws an error when a test is not provided', async () => {
   await expect(percySnapshot())
@@ -21,18 +21,18 @@ test('throws an error when a name is not provided', async t => {
 });
 
 test('disables snapshots when the healthcheck fails', async t => {
-  sdk.test.failure('/percy/healthcheck');
+  await helpers.testFailure('/percy/healthcheck');
 
   await percySnapshot(t, 'Snapshot 1');
   await percySnapshot(t, 'Snapshot 2');
 
-  expect(sdk.server.requests).toEqual([
+  await expect(helpers.getRequests()).resolves.toEqual([
     ['/percy/healthcheck']
   ]);
 
-  expect(sdk.logger.stderr).toEqual([]);
-  expect(sdk.logger.stdout).toEqual([
-    '[percy] Percy is not running, disabling snapshots\n'
+  expect(helpers.logger.stderr).toEqual([]);
+  expect(helpers.logger.stdout).toEqual([
+    '[percy] Percy is not running, disabling snapshots'
   ]);
 });
 
@@ -40,7 +40,7 @@ test('posts snapshots to the local percy server', async t => {
   await percySnapshot(t, 'Snapshot 1');
   await percySnapshot(t, 'Snapshot 2');
 
-  expect(sdk.server.requests).toEqual([
+  await expect(helpers.getRequests()).resolves.toEqual([
     ['/percy/healthcheck'],
     ['/percy/dom.js'],
     ['/percy/snapshot', {
@@ -55,18 +55,18 @@ test('posts snapshots to the local percy server', async t => {
     })]
   ]);
 
-  expect(sdk.logger.stdout).toEqual([]);
-  expect(sdk.logger.stderr).toEqual([]);
+  expect(helpers.logger.stdout).toEqual([]);
+  expect(helpers.logger.stderr).toEqual([]);
 });
 
 test('handles snapshot errors', async t => {
-  sdk.test.failure('/percy/snapshot', 'failure');
+  await helpers.testFailure('/percy/snapshot', 'failure');
 
   await percySnapshot(t, 'Snapshot 1');
 
-  expect(sdk.logger.stdout).toEqual([]);
-  expect(sdk.logger.stderr).toEqual([
-    '[percy] Could not take DOM snapshot "Snapshot 1"\n',
-    '[percy] Error: failure\n'
+  expect(helpers.logger.stdout).toEqual([]);
+  expect(helpers.logger.stderr).toEqual([
+    '[percy] Could not take DOM snapshot "Snapshot 1"',
+    '[percy] Error: failure'
   ]);
 });
