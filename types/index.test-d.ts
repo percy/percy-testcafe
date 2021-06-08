@@ -1,9 +1,10 @@
-import { expectType, expectError } from 'tsd';
-import percySnapshot from '.';
+import { expectType, expectError } from "tsd"
+import { t } from "testcafe"
+import percySnapshot from "."
 
-expectError(percySnapshot());
+expectError(percySnapshot(t))
 
-expectType<Promise<void>>(percySnapshot('Snapshot name'));
-expectType<Promise<void>>(percySnapshot('Snapshot name', { widths: [1000] }));
+expectType<Promise<void>>(percySnapshot(t, "Snapshot name"))
+expectType<Promise<void>>(percySnapshot(t, "Snapshot name", { widths: [1000] }))
 
-expectError(percySnapshot('Snapshot name', { foo: 'bar' }));
+expectError(percySnapshot(t, "Snapshot name", { foo: "bar" }))
