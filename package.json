@@ -21,7 +21,7 @@
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
-    "test": "testcafe chrome:headless tests",
+    "test": "percy exec --testing -- testcafe chrome:headless tests",
     "test:coverage": "nyc yarn test",
     "test:types": "tsd"
   },
@@ -32,7 +32,7 @@
     "testcafe": "~1"
   },
   "devDependencies": {
-    "@percy/core": "^1.1.1",
+    "@percy/cli": "^1.9.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-standard": "^16.0.1",
