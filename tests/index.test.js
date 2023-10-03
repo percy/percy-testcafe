@@ -1,10 +1,12 @@
 import expect from 'expect';
 import helpers from '@percy/sdk-utils/test/helpers';
+import { waitForPercyIdle } from '@percy/sdk-utils';
 import percySnapshot from '..';
 
 fixture('percySnapshot')
   .page(helpers.testSnapshotURL)
-  .beforeEach(() => helpers.setupTest());
+  .beforeEach(() => helpers.setupTest())
+  .after(async () => await waitForPercyIdle());
 
 test('throws an error when a test is not provided', async () => {
   await expect(percySnapshot())
