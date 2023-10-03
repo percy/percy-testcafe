@@ -36,7 +36,7 @@ module.exports = async function percySnapshot(t, name, options) {
       // otherwise in testcafe. We need this because when https sites are being tested with http
       // proxy, we are unable to do resource discovery due to SSL errors [ testcafe replaces
       // all urls with proxied urls and causes http calls from https page in asset discovery ]
-      proxyUrl: window['%hammerhead%']?.utils?.url?.getProxyUrl(''),
+      proxyUrl: window['%hammerhead%']?.utils?.url?.getProxyUrl('')
     }), { boundTestRun: t, dependencies: { options } });
 
     if (proxyUrl) {

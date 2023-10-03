@@ -36,7 +36,7 @@ test('posts snapshots to the local percy server', async t => {
   // format is http://192.168.0.104:57634/VsZiT1t2l*stFMYCMD1/https://www.example.com/
   const urlRegex = new RegExp(
     `- url: http://.*:.*/.*/${helpers.testSnapshotURL}`
-  )
+  );
 
   expect(await helpers.get('logs')).toEqual(expect.arrayContaining([
     'Snapshot found: Snapshot 1',
