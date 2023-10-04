@@ -1,10 +1,12 @@
 import expect from 'expect';
 import helpers from '@percy/sdk-utils/test/helpers';
+import { waitForPercyIdle } from '@percy/sdk-utils';
 import percySnapshot from '..';
 
 fixture('percySnapshot')
   .page(helpers.testSnapshotURL)
-  .beforeEach(() => helpers.setupTest());
+  .beforeEach(() => helpers.setupTest())
+  .after(async () => await waitForPercyIdle());
 
 test('throws an error when a test is not provided', async () => {
   await expect(percySnapshot())
@@ -31,10 +33,15 @@ test('posts snapshots to the local percy server', async t => {
   await percySnapshot(t, 'Snapshot 1');
   await percySnapshot(t, 'Snapshot 2');
 
+  // format is http://192.168.0.104:57634/VsZiT1t2l*stFMYCMD1/https://www.example.com/
+  const urlRegex = new RegExp(
+    `- url: http://.*:.*/.*/${helpers.testSnapshotURL}`
+  );
+
   expect(await helpers.get('logs')).toEqual(expect.arrayContaining([
     'Snapshot found: Snapshot 1',
     'Snapshot found: Snapshot 2',
-    `- url: ${helpers.testSnapshotURL}`,
+    expect.stringMatching(urlRegex),
     expect.stringMatching(/clientInfo: @percy\/testcafe\/.+/),
     expect.stringMatching(/environmentInfo: testcafe\/.+/)
   ]));
