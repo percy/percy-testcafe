@@ -1331,10 +1331,10 @@
   resolved "https://registry.yarnpkg.com/@percy/logger/-/logger-1.26.2.tgz#9c0d9fd5e72e4399389e27202e35f557f4ea2632"
   integrity sha512-EVwPoUJWm2ESn3Llorc6D3mqwQeALgaDerlsXA7JvKOk2Xaf68CRk5akI8NBN6rZoWIx8t5WjjJksGzPvMYYnw==
 
-"@percy/sdk-utils@^1.1.1":
-  version "1.26.2"
-  resolved "https://registry.yarnpkg.com/@percy/sdk-utils/-/sdk-utils-1.26.2.tgz#1a02b00f63c6244b10c0c5151901d5b41ea7ca47"
-  integrity sha512-sqxex+UnUoKN046jZS8UHB1YnQuJ0/lzMQaCdNKrF1F/U/1j/LrGywjXI9+NsGa29FdcZfU17530qt961sPgow==
+"@percy/sdk-utils@^1.27.7":
+  version "1.28.0"
+  resolved "https://registry.yarnpkg.com/@percy/sdk-utils/-/sdk-utils-1.28.0.tgz#479f5374aa34efe4a18e1fd290a2c328b670e7ed"
+  integrity sha512-K4fziY+OXJJtNVfecO3jI3VQFuei2Lf8/5nlQvnx+U9v8fGFrkc0aE+gIlP3Ce5qzJbotgAlV1Dd0bZ2y7i7vw==
 
 "@sinclair/typebox@^0.27.8":
   version "0.27.8"
