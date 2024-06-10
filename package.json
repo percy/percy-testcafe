@@ -42,7 +42,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "expect": "^29.0.1",
     "nyc": "^15.1.0",
-    "testcafe": "^2.0.0",
+    "testcafe": "^3.6.1",
     "tsd": "^0.24.1"
   }
 }
