@@ -24,6 +24,30 @@ module.exports = async function percySnapshot(t, name, options) {
     /* eslint-disable-next-line no-new-func */
     await t.eval(new Function(await utils.fetchPercyDOM()), { boundTestRun: t });
 
+    // Readiness gate — runs before serialize when CLI supports it (PER-7348).
+    // Uses typeof guard for backward compat with older CLI that lacks waitForReady.
+    const readinessConfig = options?.readiness || utils.percy?.config?.snapshot?.readiness || {};
+    let readinessDiagnostics;
+    if (readinessConfig.preset !== 'disabled') {
+      try {
+        /* istanbul ignore next: no instrumenting injected code */
+        readinessDiagnostics = await t.eval(async () => {
+          /* eslint-disable-next-line no-undef */
+          if (typeof PercyDOM !== 'undefined' && typeof PercyDOM.waitForReady === 'function') {
+            try {
+              /* eslint-disable-next-line no-undef */
+              return await PercyDOM.waitForReady(readinessConfig);
+            } catch (e) {
+              return undefined;
+            }
+          }
+          return undefined;
+        }, { boundTestRun: t, dependencies: { readinessConfig } });
+      } catch (e) {
+        log.debug(`waitForReady failed, proceeding to serialize: ${e?.message || e}`);
+      }
+    }
+
     // Serialize and capture the DOM
     /* istanbul ignore next: no instrumenting injected code */
     let { domSnapshot, url, proxyUrl } = await t.eval(() => ({
@@ -41,6 +65,11 @@ module.exports = async function percySnapshot(t, name, options) {
 
     if (proxyUrl) {
       url = `${parseProxyBaseUrl(proxyUrl)}/${url}`;
+    }
+
+    // Attach readiness diagnostics so the CLI can log timing and pass/fail
+    if (readinessDiagnostics && domSnapshot && typeof domSnapshot === 'object') {
+      domSnapshot.readiness_diagnostics = readinessDiagnostics;
     }
 
     // Post the DOM to the snapshot endpoint with snapshot options and other info
