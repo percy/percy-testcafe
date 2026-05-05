@@ -62,6 +62,9 @@ module.exports = async function percySnapshot(t, name, options) {
     }
 
     // Serialize and capture the DOM
+    // Merge .percy.yml config options with snapshot options (snapshot options take priority)
+    const configOptions = utils.percy?.config?.snapshot || {};
+    const mergedOptions = { ...configOptions, ...forwardOpts };
     /* istanbul ignore next: no instrumenting injected code */
     let { domSnapshot, url, proxyUrl } = await t.eval(() => ({
       /* eslint-disable-next-line no-undef */
@@ -74,7 +77,7 @@ module.exports = async function percySnapshot(t, name, options) {
       // proxy, we are unable to do resource discovery due to SSL errors [ testcafe replaces
       // all urls with proxied urls and causes http calls from https page in asset discovery ]
       proxyUrl: window['%hammerhead%']?.utils?.url?.getProxyUrl('')
-    }), { boundTestRun: t, dependencies: { serializeOpts: forwardOpts } });
+    }), { boundTestRun: t, dependencies: { serializeOpts: mergedOptions } });
 
     if (proxyUrl) {
       url = `${parseProxyBaseUrl(proxyUrl)}/${url}`;
