@@ -62,9 +62,9 @@ module.exports = async function percySnapshot(t, name, options) {
     }
 
     // Serialize and capture the DOM
-    // Merge .percy.yml config options with snapshot options (snapshot options take priority)
-    const configOptions = utils.percy?.config?.snapshot || {};
-    const mergedOptions = { ...configOptions, ...forwardOpts };
+    // Merge .percy.yml config options with snapshot options (snapshot options take priority).
+    // Use forwardOpts so the SDK-local `readiness` key stays stripped from serialize.
+    const mergedOptions = utils.mergeSnapshotOptions(forwardOpts);
     /* istanbul ignore next: no instrumenting injected code */
     let { domSnapshot, url, proxyUrl } = await t.eval(() => ({
       /* eslint-disable-next-line no-undef */
