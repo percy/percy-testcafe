@@ -28,7 +28,7 @@ module.exports = async function percySnapshot(t, name, options) {
     /* eslint-disable-next-line no-new-func */
     await t.eval(new Function(await utils.fetchPercyDOM()), { boundTestRun: t });
 
-    // Readiness gate (PER-7348). TestCafe's `t.eval` uses dependencies (closure
+    // Readiness gate. TestCafe's `t.eval` uses dependencies (closure
     // variables) rather than a stringifiable script, so we keep the in-browser
     // call inline rather than using `utils.waitForReadyScript`. Config
     // precedence uses sdk-utils' shallow-merge when available, with a local

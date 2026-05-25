@@ -56,7 +56,7 @@ test('handles snapshot errors', async t => {
   ]));
 });
 
-// Readiness gate (PER-7348)
+// Readiness gate
 //
 // PercyDOM is fetched from /percy/dom.js during percySnapshot. The mock
 // served by @percy/sdk-utils/test/helpers does not expose waitForReady,
