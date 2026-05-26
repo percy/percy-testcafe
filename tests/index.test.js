@@ -55,3 +55,40 @@ test('handles snapshot errors', async t => {
     '[percy] Could not take DOM snapshot "Snapshot 1"'
   ]));
 });
+
+// Readiness gate
+//
+// PercyDOM is fetched from /percy/dom.js during percySnapshot. The mock
+// served by @percy/sdk-utils/test/helpers does not expose waitForReady,
+// so the SDK's `typeof PercyDOM.waitForReady === 'function'` guard short-
+// circuits and the snapshot path proceeds as before. These tests verify
+// that the readiness gate does not break the existing flow on either the
+// happy path or when the user explicitly disables readiness.
+test('does not break snapshot when CLI does not expose waitForReady (backward compat)', async t => {
+  await percySnapshot(t, 'Snapshot 1');
+
+  expect(await helpers.get('logs')).toEqual(expect.arrayContaining([
+    'Snapshot found: Snapshot 1'
+  ]));
+});
+
+test('skips waitForReady when readiness.preset is disabled', async t => {
+  await percySnapshot(t, 'Snapshot 1', { readiness: { preset: 'disabled' } });
+
+  expect(await helpers.get('logs')).toEqual(expect.arrayContaining([
+    'Snapshot found: Snapshot 1'
+  ]));
+  expect(helpers.logger.stderr).not.toEqual(expect.arrayContaining([
+    expect.stringContaining('Could not take DOM snapshot')
+  ]));
+});
+
+test('still posts a snapshot when a readiness config is supplied (waitForReady absent on stub)', async t => {
+  await percySnapshot(t, 'Snapshot 1', {
+    readiness: { preset: 'balanced', stabilityWindowMs: 100, timeoutMs: 1000 }
+  });
+
+  expect(await helpers.get('logs')).toEqual(expect.arrayContaining([
+    'Snapshot found: Snapshot 1'
+  ]));
+});
