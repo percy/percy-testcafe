@@ -29,7 +29,11 @@
     "@percy/sdk-utils": "^1.32.0"
   },
   "resolutions": {
-    "image-size": "~1.0.2"
+    "image-size": "~1.0.2",
+    "snyk-nodejs-lockfile-parser": "1.59.0",
+    "node-releases": "2.0.19",
+    "testcafe-hammerhead": "24.7.4",
+    "minimatch": "9.0.5"
   },
   "peerDependencies": {
     "testcafe": ">=1"
@@ -45,7 +49,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "expect": "^29.0.1",
     "nyc": "^15.1.0",
-    "testcafe": "^2.0.0",
+    "testcafe": "2.0.1",
     "tsd": "^0.24.1"
   }
 }
