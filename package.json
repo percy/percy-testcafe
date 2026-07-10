@@ -26,13 +26,20 @@
     "test:types": "tsd"
   },
   "dependencies": {
-    "@percy/sdk-utils": "^1.31.15-beta.0"
+    "@percy/sdk-utils": "^1.32.0"
+  },
+  "resolutions": {
+    "image-size": "~1.0.2",
+    "snyk-nodejs-lockfile-parser": "1.59.0",
+    "node-releases": "2.0.19",
+    "testcafe-hammerhead": "24.7.4",
+    "minimatch": "9.0.5"
   },
   "peerDependencies": {
     "testcafe": ">=1"
   },
   "devDependencies": {
-    "@percy/cli": "^1.10.4",
+    "@percy/cli": "^1.32.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-standard": "^16.0.1",
@@ -42,7 +49,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "expect": "^29.0.1",
     "nyc": "^15.1.0",
-    "testcafe": "^2.0.0",
+    "testcafe": "2.0.1",
     "tsd": "^0.24.1"
   }
 }
