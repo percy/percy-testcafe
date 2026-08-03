@@ -1159,137 +1159,133 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@percy/cli-app@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-app/-/cli-app-1.32.0.tgz#5ec79b77d7e441b534045453873def0ef4e931cc"
-  integrity sha512-6lY6xKmpGG0gBPoj5OEizMPqmHk/VJ1FoR+UsmtaM0whsBzmsc6CHf9i3O59X5DFuGvbBhbkUzPaUPuWVXUQjQ==
+"@percy/cli-app@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-app/-/cli-app-1.32.5.tgz#defca6f96ab2449a434ca5c1ae0ea2541908438f"
+  integrity sha512-q2Ir0D9EBASb7hUW8f8Chz3mSfILlCZJgQZNsd9HsJzOMA6YBrx86hfGR6EHdEmF2LZGczAZo9b3KNTmonTZAg==
   dependencies:
-    "@percy/cli-command" "1.32.0"
-    "@percy/cli-exec" "1.32.0"
+    "@percy/cli-command" "1.32.5"
+    "@percy/cli-exec" "1.32.5"
 
-"@percy/cli-build@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-build/-/cli-build-1.32.0.tgz#e3a325c2d6232d1c157c7ea59a595730622e57fb"
-  integrity sha512-bBZtVH8Rtq/WaPtcOkUUpoyqtIE5f7HyOgZa0QrUnKtXUd8LLsNYtKErn0rNoWAKnh4l0bh5kLmV6bfgVlcXRg==
+"@percy/cli-build@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-build/-/cli-build-1.32.5.tgz#8055a1e662c60c20259d37b95e553b21e3a97541"
+  integrity sha512-Z0Bdfx2ndQj4io9ploY6gUJxQ/sccPgwFpsax2qY70THqq0Cf5QxxIS3v14Jg1bAo8WXxo9LsI/a2T1/JmvNQA==
   dependencies:
-    "@percy/cli-command" "1.32.0"
+    "@percy/cli-command" "1.32.5"
 
-"@percy/cli-command@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-command/-/cli-command-1.32.0.tgz#0ead52b4ed6c9ab46cf1fb8a187dde37e79b7a0f"
-  integrity sha512-jaVSd8HssPFRpuWobb9M6j8/69O70uaCNVp5Wn2zHcj3hb6MvqMhJf8VkXg2DbsRHtqr4EC70g+kXhpjl9PMyA==
+"@percy/cli-command@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-command/-/cli-command-1.32.5.tgz#1404d9fb6e0ff6c3324632510390a510ed4973c4"
+  integrity sha512-HUobOnUNKBrzrdWmZK10bOKpy9xr0oFkcxTjAl8TlRYRZhZrXtCoKB+X956wqcVksAF2CbpUGF6lQTikppgc5A==
   dependencies:
-    "@percy/config" "1.32.0"
-    "@percy/core" "1.32.0"
-    "@percy/logger" "1.32.0"
-    glob-to-regexp "^0.4.1"
-    stream-json "^1.8.0"
-  optionalDependencies:
-    snyk-nodejs-lockfile-parser "2.7.1"
+    "@percy/config" "1.32.5"
+    "@percy/core" "1.32.5"
+    "@percy/logger" "1.32.5"
 
-"@percy/cli-config@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-config/-/cli-config-1.32.0.tgz#5d28b98cea99f2e633d6a97152e74fd08db1b45d"
-  integrity sha512-f+amucT3RkhJJPY2fqj4j2D99LM3jPM7k+2nCM/xLLRZvN1ctdRgQMTVabQDwBD5ym/dwGfIvht7ELm48A3ytw==
+"@percy/cli-config@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-config/-/cli-config-1.32.5.tgz#b03ca7d3d5bef820ccbcdb1084d1d8eecf7a15bb"
+  integrity sha512-J51Vj/6IWYfffZEauK3EXrdMtcKDfoaBYqcKhVGqhowkQTN9XAI6AomyWvNXiMAqpiSVg9j/cS4DKw899Hf+bQ==
   dependencies:
-    "@percy/cli-command" "1.32.0"
+    "@percy/cli-command" "1.32.5"
 
-"@percy/cli-doctor@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-doctor/-/cli-doctor-1.32.0.tgz#674e47256bb2485d8dae2a9dab52fc886daabc14"
-  integrity sha512-+CnlPzlMGyyY/Hshu1k2Iw7YvgZcWcxcVI2c3C2GYBxFqCH0TAjtoMhMSm3RrcACKc4O1gInY7KRhvDOQm9QzQ==
+"@percy/cli-doctor@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-doctor/-/cli-doctor-1.32.5.tgz#4099356c7e162eac538045219913efddcda8bc91"
+  integrity sha512-6jJyR2Msw+HVeuwF6xK9udeO4SJJyjmn2+M/n/I61m2HqS6EAHee4sjUmpYtKrkD/x5yAXsf6UF8vKNfdK4n6A==
   dependencies:
-    "@percy/cli-command" "1.32.0"
-    "@percy/client" "1.32.0"
-    "@percy/config" "1.32.0"
-    "@percy/core" "1.32.0"
-    "@percy/env" "1.32.0"
-    "@percy/logger" "1.32.0"
-    "@percy/monitoring" "1.32.0"
+    "@percy/cli-command" "1.32.5"
+    "@percy/client" "1.32.5"
+    "@percy/config" "1.32.5"
+    "@percy/core" "1.32.5"
+    "@percy/env" "1.32.5"
+    "@percy/logger" "1.32.5"
+    "@percy/monitoring" "1.32.5"
     minimatch "^9.0.0"
     ws "^8.17.1"
 
-"@percy/cli-exec@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-exec/-/cli-exec-1.32.0.tgz#44a1a4b959fe020fe20cf39faacd4b64de8d37d0"
-  integrity sha512-/RxnWPBm0SEaldEm9/dzs1FSEzJX2I/8LV3zVyw/mVWus0wUbvt3cdjBLFfON6CGmav3iSkSKacYWpNYxWG9Mw==
+"@percy/cli-exec@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-exec/-/cli-exec-1.32.5.tgz#49f9daecd9ebf9a74968b47a048cdec1764c1260"
+  integrity sha512-D9PiUT5dGZUnol4FxbZ8Y+7WdBzwG8/K0tkFxjIFyd41JQrTpzjGcZlPFQMdQMbE84GxNF24Yw3uxxL9md5kNA==
   dependencies:
-    "@percy/cli-command" "1.32.0"
-    "@percy/logger" "1.32.0"
+    "@percy/cli-command" "1.32.5"
+    "@percy/logger" "1.32.5"
     cross-spawn "^7.0.3"
     which "^2.0.2"
 
-"@percy/cli-snapshot@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-snapshot/-/cli-snapshot-1.32.0.tgz#e8a85e5a691c8c182b20bf84cc9c1621f4dcb197"
-  integrity sha512-wzN0PX2G6vuDEwPoJjzz8ArqtsKg1C9qZ2OzpLQEhkbvRolTLT0grXOl300ffzcbUsFOOmhfn2jpKEwLxljoJg==
+"@percy/cli-snapshot@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-snapshot/-/cli-snapshot-1.32.5.tgz#650bbf51da2bbfed7402e28ff5f6c31ae7d20414"
+  integrity sha512-AwyHcNvYdGYqs5Ll7HD9JjWd38bFquKM3CDXpUMKk3zQtL80KIFF6MGfKDdRMsPZzLCCpko4V9MtWHU9/Twahw==
   dependencies:
-    "@percy/cli-command" "1.32.0"
+    "@percy/cli-command" "1.32.5"
     yaml "^2.0.0"
 
-"@percy/cli-upload@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli-upload/-/cli-upload-1.32.0.tgz#ace7793f2b85bebe37c9f8841a84e63629b61a90"
-  integrity sha512-8/y4GcTBAChv2TAACoJVZ9ghk5VVHBFQm5ZDf9DiDuSEYwas5SErNhLlqbJsHPz8zEwpo5eHWoz8sNcBp0GiuQ==
+"@percy/cli-upload@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli-upload/-/cli-upload-1.32.5.tgz#579e98ea391c071d4d37a11d1ab139ac2b8eaffb"
+  integrity sha512-qJwOBvzlCjDT/DXVWT6rdW+l6yYimak+RuAVPMh9XSmdwGIGfLbsVXp0Ar8x+F0Zo7aelcXkryjlaFX98uXw4g==
   dependencies:
-    "@percy/cli-command" "1.32.0"
+    "@percy/cli-command" "1.32.5"
     fast-glob "^3.2.11"
-    image-size "^1.0.0"
+    image-size "~1.0.2"
 
 "@percy/cli@^1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/cli/-/cli-1.32.0.tgz#e4c268ae35decf16edf7a22ccdc74002e08df826"
-  integrity sha512-crBvGuwaoK3ifOwoQAKNHrjhzQnCm1BDAp+AWySLybX/rqEDWBbR/tnv/qRnI+IYdD190E+cKUG7ikvmW4+8NA==
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/cli/-/cli-1.32.5.tgz#7b6d539a51148d8002722aaed392b366e537a565"
+  integrity sha512-pqPKwEcRfpZfFmhWhDitzaja6Oi2i4nrqzm44NTnq3Wp5O+w23th/5OpgdA96MaY1NoNYVYhzOGwosiWv9A3ag==
   dependencies:
-    "@percy/cli-app" "1.32.0"
-    "@percy/cli-build" "1.32.0"
-    "@percy/cli-command" "1.32.0"
-    "@percy/cli-config" "1.32.0"
-    "@percy/cli-doctor" "1.32.0"
-    "@percy/cli-exec" "1.32.0"
-    "@percy/cli-snapshot" "1.32.0"
-    "@percy/cli-upload" "1.32.0"
-    "@percy/client" "1.32.0"
-    "@percy/logger" "1.32.0"
+    "@percy/cli-app" "1.32.5"
+    "@percy/cli-build" "1.32.5"
+    "@percy/cli-command" "1.32.5"
+    "@percy/cli-config" "1.32.5"
+    "@percy/cli-doctor" "1.32.5"
+    "@percy/cli-exec" "1.32.5"
+    "@percy/cli-snapshot" "1.32.5"
+    "@percy/cli-upload" "1.32.5"
+    "@percy/client" "1.32.5"
+    "@percy/logger" "1.32.5"
 
-"@percy/client@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/client/-/client-1.32.0.tgz#13d658039b6dbd3331281532ecda9d5e07d192d0"
-  integrity sha512-PPegvH7uImhPV9+AbSkBd3gJU58I6xljrS+j6VwhMxVvuheeRJ2mYrLl2g8sgqEmWh7Q6KTFxYhLrxE8u5YTIQ==
+"@percy/client@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/client/-/client-1.32.5.tgz#cc369e9bd004fe6d5ae0697dec323d33aa3cdb57"
+  integrity sha512-7mZcA0e+aGaZNdqhMud6LlXBGacS/czlPzALSK1tiOeeWkSc/Q9aojc4vgdBEmKKPd/JAlSUK/P2O9DfffXTpw==
   dependencies:
-    "@percy/config" "1.32.0"
-    "@percy/env" "1.32.0"
-    "@percy/logger" "1.32.0"
+    "@percy/config" "1.32.5"
+    "@percy/env" "1.32.5"
+    "@percy/logger" "1.32.5"
     pac-proxy-agent "^7.0.2"
     pako "^2.1.0"
 
-"@percy/config@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/config/-/config-1.32.0.tgz#68c1203e10ef691851083cfac71c173c68f90322"
-  integrity sha512-XvK5jlnnZ49qfOVOpRHB7M4/B/B1VS03kCXroZ+jAKy7Qnao8qevl9OxwmPmvdYelYmeJ9UKaF61B9IoG5bsaw==
+"@percy/config@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/config/-/config-1.32.5.tgz#3abeb96e48abd3c36a8c0e4a421a63e03dc6e6e4"
+  integrity sha512-Br2GXw8nwNFZ98X69+yw8tWamoo4JSaW7poDU/xtHt0r3s3Pq1tzMEfmZK+JTex2vPeuJfZYs4YLNwMWvOVflw==
   dependencies:
-    "@percy/logger" "1.32.0"
+    "@percy/logger" "1.32.5"
     ajv "^8.6.2"
     cosmiconfig "^8.0.0"
     yaml "^2.0.0"
 
-"@percy/core@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/core/-/core-1.32.0.tgz#ca1b2d76d294038776a5a1ff21e6cb0456f4db5e"
-  integrity sha512-idPvkfNMi+ErEyUZ0klHaThTcwjAfgnhMkR4Jf7i6wJ+uP4pOxP86G6ZOXH+RJMYI9toptx+YNlLIan650MOFQ==
+"@percy/core@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/core/-/core-1.32.5.tgz#e91143c98a5407e82070fbdf0fe095dfe1198cf6"
+  integrity sha512-bMwYiCcF5ha0iylbLx1u0FVj9z4f3KpI8dYvM7iamxvzAlYKKLjNBe5czbEUmTKIICeS0Nr4LBBp2htbLkdRAA==
   dependencies:
     "@grpc/grpc-js" "^1.14.3"
     "@grpc/proto-loader" "^0.8.0"
-    "@percy/client" "1.32.0"
-    "@percy/config" "1.32.0"
-    "@percy/dom" "1.32.0"
-    "@percy/logger" "1.32.0"
-    "@percy/monitoring" "1.32.0"
-    "@percy/webdriver-utils" "1.32.0"
+    "@percy/client" "1.32.5"
+    "@percy/config" "1.32.5"
+    "@percy/dom" "1.32.5"
+    "@percy/logger" "1.32.5"
+    "@percy/monitoring" "1.32.5"
+    "@percy/webdriver-utils" "1.32.5"
+    adm-zip "^0.6.0"
     busboy "^1.6.0"
     content-disposition "^0.5.4"
     cross-spawn "^7.0.3"
-    extract-zip "^2.0.1"
     fast-glob "^3.2.11"
     fast-xml-parser "^4.4.1"
     micromatch "^4.0.8"
@@ -1300,49 +1296,56 @@
     ws "^8.17.1"
     yaml "^2.4.1"
   optionalDependencies:
-    "@percy/cli-doctor" "1.32.0"
+    "@percy/cli-doctor" "1.32.5"
 
-"@percy/dom@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/dom/-/dom-1.32.0.tgz#e00b883b78a5a1ec0d9e3dc09e9f365165b3617a"
-  integrity sha512-HLjO2n1lyAO0z9kJu+tBvvyl4N2NY49XXtgC0Oo3lmyViJIMG9jaLqOSt1Nsn732ZQNwi2pynoEAvrBizY17Mw==
+"@percy/dom@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/dom/-/dom-1.32.5.tgz#28dccdf2c9418df47ecf21b33083ff0398c7132a"
+  integrity sha512-snlSyxq0qAJ1pw9Ra88hbAQ3/omHOaijlgU02t7qonClGbIYHSfiGobbWioaadDmpULR3VnA9AHgbN2U8fRuKg==
 
-"@percy/env@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/env/-/env-1.32.0.tgz#63955c081f651e61778a79a4f2556e735b55311a"
-  integrity sha512-MNiIKPJYziDhtOMeWcat00G3K93YsiZFQeGirfDJcBuKJaj5ztUkHtXsZzaBXkpcRY6Cb0gfil/6kaXO57KYmg==
+"@percy/env@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/env/-/env-1.32.5.tgz#bc8301c4632269b7d96a3e23fa3465f96405d8b8"
+  integrity sha512-qiZJzLIqZHWBfbcqTnRYjtbezZvkX7U/+GSq0O/EAARqVDbyuhSgrO3Kd5rfJ+CVf8jBynL1sfOp30fp221oDQ==
   dependencies:
-    "@percy/logger" "1.32.0"
+    "@percy/logger" "1.32.5"
 
-"@percy/logger@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/logger/-/logger-1.32.0.tgz#667bb7dc1a06be041e53061e80f8202bb33ced52"
-  integrity sha512-XtBqBGi5GgeQMZ7i6SmxbzYYubzogzbPnnQwp1cFI8ulvVAvkyfiH/R0+W00q8w5S+2XySe5sAj7gCt7PTqbWA==
+"@percy/logger@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/logger/-/logger-1.32.5.tgz#14e2b0b5f6e7a5a09c44060f0f08777633b83ea3"
+  integrity sha512-JbO7iKUPZuYwcJVsMHJi40cM7cYLWikWeU2xv5EvuAH8j7ST+bhy0f0HvdoExDGUnf8GO0unyxP4JrCjuveh/Q==
 
-"@percy/monitoring@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/monitoring/-/monitoring-1.32.0.tgz#dc3193b2b10e2c7aeb02be484ac2eb5a17ce1e71"
-  integrity sha512-WCDNC6ahchq9+8xmpb6BqO5Qroh/4nQFPWYvKapdM4J9bJlX+O0t1aikoLhiEMy9nHAEDnoTJ+Ye8CMDx45FwA==
+"@percy/monitoring@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/monitoring/-/monitoring-1.32.5.tgz#2dece973c1c38bcc2ee3e03237e733eecce2e80d"
+  integrity sha512-BfA//KSBrijXqT2lBVnr5mqQ14QNVvyal1WerIbwD+x++fyYE7msDiKCBEPdRxlHM3L5Wq6QEIFu2kovZhj8/Q==
   dependencies:
-    "@percy/config" "1.32.0"
-    "@percy/logger" "1.32.0"
-    "@percy/sdk-utils" "1.32.0"
+    "@percy/config" "1.32.5"
+    "@percy/logger" "1.32.5"
+    "@percy/sdk-utils" "1.32.5"
     systeminformation "^5.25.11"
 
-"@percy/sdk-utils@1.32.0", "@percy/sdk-utils@^1.32.0":
+"@percy/sdk-utils@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/sdk-utils/-/sdk-utils-1.32.5.tgz#fc697cde77211f82300a6bb977b272a964f82189"
+  integrity sha512-xdCmG2QiWKT8M5NtWQqLLkG9DiE/m4kHvbROqwAGbVk0hd+fgUYIq/O6AvkHXtVZVfBXr7CiNqqRTjGKakIY7g==
+  dependencies:
+    pac-proxy-agent "^7.0.2"
+
+"@percy/sdk-utils@^1.32.0":
   version "1.32.0"
   resolved "https://registry.yarnpkg.com/@percy/sdk-utils/-/sdk-utils-1.32.0.tgz#8e35c1bdc3258e1b40dff1b6111c51f226359459"
   integrity sha512-CiaH6ezUnOjXtzeQFUZQxSvLr7opfDuP1qOFEX6EaeG6Mk33Wk8OyVgViqcGWUIu8D7zusDQWTn4FNRhEbsxPw==
   dependencies:
     pac-proxy-agent "^7.0.2"
 
-"@percy/webdriver-utils@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@percy/webdriver-utils/-/webdriver-utils-1.32.0.tgz#3644b45d0699db8056a3d8239b3929ffcc174ebd"
-  integrity sha512-5WDA578ij8sB1Z5RSiLwP5pazhTMP+DwIdmjHPT+XlmNRjFkiJqrJrbDGkmL5OGS65qTXMyxuAZrmeHsYyv4eg==
+"@percy/webdriver-utils@1.32.5":
+  version "1.32.5"
+  resolved "https://registry.yarnpkg.com/@percy/webdriver-utils/-/webdriver-utils-1.32.5.tgz#e5023f214dfe0fbf50bf586d16e10ae067b83aff"
+  integrity sha512-IVhCHOg8psSgfk64DyYBnJHXVRcmPxIsM6W+UhR2FL0oty+FZcNPx8gXpVKwcxJ4/zhSAvte3FqG4AxU2G9k5A==
   dependencies:
-    "@percy/config" "1.32.0"
-    "@percy/sdk-utils" "1.32.0"
+    "@percy/config" "1.32.5"
+    "@percy/sdk-utils" "1.32.5"
 
 "@pnpm/crypto.base32-hash@1.0.1":
   version "1.0.1"
@@ -1644,13 +1647,6 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@types/yauzl@^2.9.1":
-  version "2.10.3"
-  resolved "https://registry.yarnpkg.com/@types/yauzl/-/yauzl-2.10.3.tgz#e9b2808b4f109504a03cda958259876f61017999"
-  integrity sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==
-  dependencies:
-    "@types/node" "*"
-
 "@yarnpkg/core@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@yarnpkg/core/-/core-2.4.0.tgz#b5d8cc7ee2ddb022816c7afa3f83c3ee3d317c80"
@@ -1764,6 +1760,11 @@ acorn@^7.4.0:
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
+
+adm-zip@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.6.0.tgz#bbc5c6c333755e967a06dd98747f431e1d53a3cf"
+  integrity sha512-XleryMhbuksdKtofnWZ9Sk+4CUTbms4Mb/EU32SZwToAyZ5RgVos/ki8n+yr0LWHOGKuakbXTuuYNHLQjhddgg==
 
 agent-base@^7.1.0, agent-base@^7.1.2:
   version "7.1.4"
@@ -2158,11 +2159,6 @@ browserslist@^4.24.0, browserslist@^4.28.1:
     electron-to-chromium "^1.5.328"
     node-releases "^2.0.36"
     update-browserslist-db "^1.2.3"
-
-buffer-crc32@~0.2.3:
-  version "0.2.13"
-  resolved "https://registry.yarnpkg.com/buffer-crc32/-/buffer-crc32-0.2.13.tgz#0d333e3f00eac50aa1454abd30ef8c2a5d9a7242"
-  integrity sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==
 
 buffer-equal-constant-time@^1.0.1:
   version "1.0.1"
@@ -3269,17 +3265,6 @@ expect@^29.0.1:
     jest-message-util "^29.7.0"
     jest-util "^29.7.0"
 
-extract-zip@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/extract-zip/-/extract-zip-2.0.1.tgz#663dca56fe46df890d5f131ef4a06d22bb8ba13a"
-  integrity sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==
-  dependencies:
-    debug "^4.1.1"
-    get-stream "^5.1.0"
-    yauzl "^2.10.0"
-  optionalDependencies:
-    "@types/yauzl" "^2.9.1"
-
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
@@ -3324,13 +3309,6 @@ fastq@^1.6.0:
   integrity sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==
   dependencies:
     reusify "^1.0.4"
-
-fd-slicer@~1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/fd-slicer/-/fd-slicer-1.1.0.tgz#25c7c89cb1f9077f8891bbe61d8f390eae256f1e"
-  integrity sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==
-  dependencies:
-    pend "~1.2.0"
 
 file-entry-cache@^6.0.1:
   version "6.0.1"
@@ -3573,11 +3551,6 @@ glob-parent@^5.1.2:
   integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   dependencies:
     is-glob "^4.0.1"
-
-glob-to-regexp@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
-  integrity sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
 
 glob@^7.0.3, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.2.3"
@@ -3840,7 +3813,7 @@ ignore@^5.1.1, ignore@^5.2.0:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.3.2.tgz#3cd40e729f3643fd87cb04e50bf0eb722bc596f5"
   integrity sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==
 
-image-size@^1.0.0, image-size@~1.0.2:
+image-size@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-1.0.2.tgz#d778b6d0ab75b2737c1556dd631652eb963bc486"
   integrity sha512-xfOoWjceHntRb3qFCrh5ZFORYH8XCdYpASltMhZ/Q0KZiOwjdE/Yl2QCiWdwD+lygV5bMCvauzgu5PxBX/Yerg==
@@ -5378,11 +5351,6 @@ pathval@^1.1.1:
   resolved "https://registry.yarnpkg.com/pathval/-/pathval-1.1.1.tgz#8534e77a77ce7ac5a2512ea21e0fdb8fcf6c3d8d"
   integrity sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==
 
-pend@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
-  integrity sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==
-
 picocolors@^1.0.0, picocolors@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.1.tgz#3d321af3eab939b083c8f929a1d12cda81c26b6b"
@@ -6061,7 +6029,7 @@ snyk-config@^5.2.0:
     lodash.merge "^4.6.2"
     minimist "^1.2.6"
 
-snyk-nodejs-lockfile-parser@1.59.0, snyk-nodejs-lockfile-parser@2.7.1:
+snyk-nodejs-lockfile-parser@1.59.0:
   version "1.59.0"
   resolved "https://registry.yarnpkg.com/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.59.0.tgz#3689cadb2d5dd5eeb898082f53a7e4bb9abbbce7"
   integrity sha512-24PDVdrg32kKDc8XN/+wn4Opc/WYIDFdH1ZRG+MlSOMmjg9xZdCA2gS2yFjdcenq4a47JhnPlSPsB76/LxJUjw==
@@ -6210,18 +6178,6 @@ stream-buffers@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/stream-buffers/-/stream-buffers-3.0.3.tgz#9fc6ae267d9c4df1190a781e011634cac58af3cd"
   integrity sha512-pqMqwQCso0PBJt2PQmDO0cFj0lyqmiwOMiMSkVtRokl7e+ZTRYgDHKnuZNbqjiJXgsg4nuqtD/zxuo9KqTp0Yw==
-
-stream-chain@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/stream-chain/-/stream-chain-2.2.5.tgz#b30967e8f14ee033c5b9a19bbe8a2cba90ba0d09"
-  integrity sha512-1TJmBx6aSWqZ4tx7aTpBDXK0/e2hhcNSTV8+CbFJtDjbb+I1mZ8lHit0Grw9GRT+6JbIrrDd8esncgBi8aBXGA==
-
-stream-json@^1.8.0:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/stream-json/-/stream-json-1.9.1.tgz#e3fec03e984a503718946c170db7d74556c2a187"
-  integrity sha512-uWkjJ+2Nt/LO9Z/JyKZbMusL8Dkh97uUBTv3AJQ74y07lVahLY4eEFsPsE97pxYBwr8nnjMAIch5eqI0gPShyw==
-  dependencies:
-    stream-chain "^2.2.5"
 
 stream-to-array@~2.3.0:
   version "2.3.0"
@@ -7183,11 +7139,3 @@ yargs@^17.7.2:
     string-width "^4.2.3"
     y18n "^5.0.5"
     yargs-parser "^21.1.1"
-
-yauzl@^2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/yauzl/-/yauzl-2.10.0.tgz#c7eb17c93e112cb1086fa6d8e51fb0667b79a5f9"
-  integrity sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==
-  dependencies:
-    buffer-crc32 "~0.2.3"
-    fd-slicer "~1.1.0"
